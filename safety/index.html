@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Safety · Undrcurrent</title>
+<meta name="description" content="Anonymous peer support for people who use drugs, are in recovery, or live with a mental health condition." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'" />
+<meta name="referrer" content="no-referrer" />
+<link rel="icon" href="../app/favicon-48.png" />
+<style>
+:root{--ink:#0A1E3D;--muted:#3E5878;--line:#D6E4F2;--bg:#F4F9FE;--card:#fff;--soft:#EAF3FC;--accent:#0D3B7A;--accent2:#1C6CB8;--danger:#B42318;--dangerSoft:#FDE4E1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+a{color:var(--accent2)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:5;background:rgba(10,42,94,.97);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.02em}.brand small{display:block;font-weight:500;font-size:11.5px;opacity:.8;letter-spacing:.02em}
+.menu{display:flex;gap:4px 16px;flex-wrap:wrap;flex:1;font-size:15px}.menu a{color:#fff;text-decoration:none;opacity:.88;padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a[aria-current]{opacity:1;border-color:#9FD0FF}
+.btn{display:inline-block;background:#fff;color:var(--accent);font-weight:700;padding:11px 20px;border-radius:999px;text-decoration:none;border:2px solid #fff}
+.btn.ghost{background:transparent;color:#fff}.btn.dark{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.red{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.sm{padding:7px 14px;font-size:14px}
+.hero{background:linear-gradient(155deg,#0A2A5E 0%,#1C6CB8 62%,#5AA8E6 100%);color:#fff;padding:64px 0 72px}
+.hero h1{font-size:clamp(40px,7vw,64px);line-height:1.02;margin:0 0 14px;letter-spacing:-.03em}.hero p{font-size:19px;max-width:620px;margin:0 0 26px;opacity:.95}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14.5px;opacity:.92}.trust span:before{content:"✓ ";font-weight:800}
+.pagehead{background:linear-gradient(155deg,#0A2A5E,#1C6CB8);color:#fff;padding:40px 0 36px}.pagehead h1{margin:0;font-size:clamp(30px,5vw,42px);letter-spacing:-.02em}.pagehead p{margin:8px 0 0;opacity:.92;max-width:640px}
+main{padding:44px 0 56px}section{margin:0 0 44px}h2{font-size:clamp(24px,3.6vw,30px);margin:0 0 14px;letter-spacing:-.01em}h3{margin:0 0 6px;font-size:18px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 1px 2px rgba(10,30,61,.04)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 64px;position:relative}
+.steps li:before{content:counter(s);position:absolute;left:18px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center}
+.band{background:var(--soft);border-radius:22px;padding:28px}.band.red{background:var(--dangerSoft)}
+.split{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+ul.tick{list-style:none;padding:0;margin:0}ul.tick li{padding-left:28px;position:relative;margin:8px 0}ul.tick li:before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:800}
+ol.plain{padding-left:22px}ol.plain li{margin:6px 0}
+.lines{display:grid;gap:6px;margin:6px 0 18px}.line{display:flex;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:15px}
+.line b{text-align:right}.line.em{background:var(--dangerSoft);border-color:#F6C4BD}
+.muted{color:var(--muted);font-size:15px}details summary{cursor:pointer;font-weight:700;margin:6px 0 12px}
+.legal{max-width:760px}.legal h1{display:none}.legal h2{font-size:21px;margin:28px 0 8px}
+footer{background:#0A1E3D;color:#C9DAEE;font-size:14.5px;padding:30px 0}footer a{color:#fff}footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:640px){.menu{order:3;flex-basis:100%}.hero{padding:44px 0 52px}main{padding:32px 0 40px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../">Undrcurrent<small>Connection and Recovery</small></a>
+<nav class="menu" aria-label="Website"><a href="../">Home</a><a href="../how-it-works/">How it works</a><a href="../safety/" aria-current="page">Safety</a><a href="../help/">Help services</a></nav>
+<a class="btn sm" href="../app/">Open Undrcurrent</a>
+</div></header>
+<div class="pagehead"><div class="wrap"><h1>Safety</h1><p>A community agreement everyone signs, and checks that keep it.</p></div></div>
+<main><div class="wrap">
+<section><h2>The community agreement</h2><p>Everyone agrees to this when they join:</p>
+<ol class="steps"><li>Be kind. Everyone here is at a different stage, and all of them are welcome.</li><li>No buying, selling, sharing or sourcing drugs. No dosing advice.</li><li>Stay anonymous. Don't share real names or home addresses, and think carefully before sharing a phone number or your username on another app.</li><li>We're peer support, not a crisis service. Help is always at the top.</li></ol></section>
+<section><h2>How it's kept safe</h2><div class="grid">
+<div class="card"><h3>Every message checked</h3><p>Every message is checked for safety before anyone sees it. Buying, selling or sourcing drugs is blocked.</p></div>
+<div class="card"><h3>Help when it's needed</h3><p>If a message sounds like someone is in crisis, it's still sent, and they're shown people to talk to straight away.</p></div>
+<div class="card"><h3>Block and report</h3><p>Block or report anyone. Reports that someone is in danger or under 18 are dealt with urgently.</p></div>
+<div class="card"><h3>Fair decisions</h3><p>Breaking the agreement leads to a warning, then a mute, a pause or removal. Anyone can ask for a decision to be looked at again, and an independent arbitrator checks decisions.</p></div></div></section>
+<section><div class="band"><h3>Your privacy</h3><p class="muted">We never ask for your real name, email or phone number. Members' data is stored in Australia (Sydney), and you choose who sees your drug use and mental health choices. Read the <a href="../privacy/">Privacy Policy</a>.</p></div></section></div></main>
+<footer><div class="wrap"><span>Undrcurrent is peer support, not a medical or emergency service. In an emergency, call your local emergency number. Version 1.1.</span>
+<span><a href="../help/">Help services</a> · <a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms of Service</a></span></div></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Undrcurrent: Connection and Recovery</title>
+<meta name="description" content="Anonymous peer support for people who use drugs, are in recovery, or live with a mental health condition." />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'" />
+<meta name="referrer" content="no-referrer" />
+<link rel="icon" href="app/favicon-48.png" />
+<style>
+:root{--ink:#0A1E3D;--muted:#3E5878;--line:#D6E4F2;--bg:#F4F9FE;--card:#fff;--soft:#EAF3FC;--accent:#0D3B7A;--accent2:#1C6CB8;--danger:#B42318;--dangerSoft:#FDE4E1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+a{color:var(--accent2)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:5;background:rgba(10,42,94,.97);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.02em}.brand small{display:block;font-weight:500;font-size:11.5px;opacity:.8;letter-spacing:.02em}
+.menu{display:flex;gap:4px 16px;flex-wrap:wrap;flex:1;font-size:15px}.menu a{color:#fff;text-decoration:none;opacity:.88;padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a[aria-current]{opacity:1;border-color:#9FD0FF}
+.btn{display:inline-block;background:#fff;color:var(--accent);font-weight:700;padding:11px 20px;border-radius:999px;text-decoration:none;border:2px solid #fff}
+.btn.ghost{background:transparent;color:#fff}.btn.dark{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.red{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.sm{padding:7px 14px;font-size:14px}
+.hero{background:linear-gradient(155deg,#0A2A5E 0%,#1C6CB8 62%,#5AA8E6 100%);color:#fff;padding:64px 0 72px}
+.hero h1{font-size:clamp(40px,7vw,64px);line-height:1.02;margin:0 0 14px;letter-spacing:-.03em}.hero p{font-size:19px;max-width:620px;margin:0 0 26px;opacity:.95}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14.5px;opacity:.92}.trust span:before{content:"✓ ";font-weight:800}
+.pagehead{background:linear-gradient(155deg,#0A2A5E,#1C6CB8);color:#fff;padding:40px 0 36px}.pagehead h1{margin:0;font-size:clamp(30px,5vw,42px);letter-spacing:-.02em}.pagehead p{margin:8px 0 0;opacity:.92;max-width:640px}
+main{padding:44px 0 56px}section{margin:0 0 44px}h2{font-size:clamp(24px,3.6vw,30px);margin:0 0 14px;letter-spacing:-.01em}h3{margin:0 0 6px;font-size:18px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 1px 2px rgba(10,30,61,.04)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 64px;position:relative}
+.steps li:before{content:counter(s);position:absolute;left:18px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center}
+.band{background:var(--soft);border-radius:22px;padding:28px}.band.red{background:var(--dangerSoft)}
+.split{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+ul.tick{list-style:none;padding:0;margin:0}ul.tick li{padding-left:28px;position:relative;margin:8px 0}ul.tick li:before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:800}
+ol.plain{padding-left:22px}ol.plain li{margin:6px 0}
+.lines{display:grid;gap:6px;margin:6px 0 18px}.line{display:flex;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:15px}
+.line b{text-align:right}.line.em{background:var(--dangerSoft);border-color:#F6C4BD}
+.muted{color:var(--muted);font-size:15px}details summary{cursor:pointer;font-weight:700;margin:6px 0 12px}
+.legal{max-width:760px}.legal h1{display:none}.legal h2{font-size:21px;margin:28px 0 8px}
+footer{background:#0A1E3D;color:#C9DAEE;font-size:14.5px;padding:30px 0}footer a{color:#fff}footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:640px){.menu{order:3;flex-basis:100%}.hero{padding:44px 0 52px}main{padding:32px 0 40px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="">Undrcurrent<small>Connection and Recovery</small></a>
+<nav class="menu" aria-label="Website"><a href="" aria-current="page">Home</a><a href="how-it-works/">How it works</a><a href="safety/">Safety</a><a href="help/">Help services</a></nav>
+<a class="btn sm" href="app/">Open Undrcurrent</a>
+</div></header>
+<div class="hero"><div class="wrap">
+<h1>You don't have to do this alone.</h1>
+<p>Undrcurrent is a private, anonymous place to meet people who understand what you're going through, whether you use drugs, are in recovery, or live with a mental health condition.</p>
+<div class="ctas"><a class="btn" href="app/">Open Undrcurrent</a><a class="btn ghost" href="how-it-works/">How it works</a><a class="btn red" href="help/">Get help now</a></div>
+<div class="trust"><span>For adults, 18+</span><span>No real name, email or phone</span><span>Every message is checked for safety</span><span>Data stored in Australia</span></div>
+</div></div>
+<main><div class="wrap">
+<section id="about"><h2>Why people use Undrcurrent</h2>
+<div class="grid"><div class="card"><h3>Find people who get it</h3><p>We match you on shared interests, drug use and mental health, so conversations start from common ground.</p></div><div class="card"><h3>Stay anonymous</h3><p>No real name, email or phone number. You decide who sees what.</p></div><div class="card"><h3>Feel less alone, day or night</h3><p>One-to-one chats, small group rooms, and peer supporters who have been there too.</p></div><div class="card"><h3>Safe by design</h3><p>Every message is checked for safety, drug dealing is blocked, and Help is one tap away.</p></div></div></section>
+<section id="how"><div class="split"><div><h2>Getting started takes a few minutes</h2>
+<ol class="steps"><li>Create an anonymous account with a username and password.</li><li>Set up your profile using the three choices: Interest, Drug use and Mental health, and say if you'd like peer support.</li><li>See your matches on the Search page and say hi.</li><li>Join rooms on topics that matter to you.</li></ol>
+<p><a href="how-it-works/">More about how it works</a></p></div>
+<div class="band"><h3>Talk to Mae, any time</h3><p class="muted">Rather not talk to a person right now? Mae is always there to listen and encourage you. Mae is automatic, not a real person, and she'll point you to help if you need it.</p></div></div></section>
+<section id="safety"><div class="band"><h2>Safe by design</h2>
+<ul class="tick"><li>Every message is checked for safety before anyone sees it.</li><li>Buying, selling or sourcing drugs is blocked. Talking about drug use, recovery and harm reduction is always welcome.</li><li>Block or report anyone. Anyone can ask for a decision to be looked at again.</li></ul>
+<p><a class="btn dark" href="safety/">How we keep it safe</a></p></div></section>
+<section id="help"><div class="band red"><h2>Need help right now?</h2>
+<p><b>If you are in danger or someone may have overdosed, call your emergency number now.</b> If you have naloxone, use it and stay with them.</p>
+<p><a class="btn red" href="help/">Find a helpline in your country</a></p></div></section></div></main>
+<footer><div class="wrap"><span>Undrcurrent is peer support, not a medical or emergency service. In an emergency, call your local emergency number. Version 1.1.</span>
+<span><a href="help/">Help services</a> · <a href="privacy/">Privacy Policy</a> · <a href="terms/">Terms of Service</a></span></div></footer>
+</body>
+</html>
