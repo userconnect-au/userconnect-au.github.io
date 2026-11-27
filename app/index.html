@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://prpbhfzsjxcburgzxzgl.supabase.co wss://prpbhfzsjxcburgzxzgl.supabase.co; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>Undrcurrent: Connection and Recovery</title>
+    <!-- Installable web app: the details, icons and home-screen settings. Paths are relative, so the app works in a sub-folder. -->
+    <meta name="description" content="Anonymous peer support for people who use drugs, are in recovery, or live with a mental health condition." />
+    <meta name="robots" content="noindex" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Undrcurrent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="referrer" content="no-referrer" />
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      html, body { height: 100%; }
+      body { overflow: hidden; background: #D7E9F8; }
+      #root { display: flex; height: 100%; flex: 1; }
+      /* The app's frame never scrolls, so the header (Exit, Hide, Help), the menu and the tabs always stay on screen,
+         whatever is inside it (26 Nov 2026). 'clip', unlike 'hidden', can't be scrolled by the browser either. */
+      #device { overflow: clip !important; }
+      /* Responsive layout (Rusty, 17 Nov 2026). From 900px wide, each page (#page) uses two columns, up to 1200px wide.
+         The first item (the page heading), plain text and buttons span both columns. Sign-up, setup, matches,
+         the age check and More stay one readable column. Welcome puts Sign in beside the welcome text, and
+         Search puts the filters beside Mae and the matches. Matches src/lib/layout.ts and prototype/index.html. */
+      @media (min-width: 900px) {
+        #page { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; align-items: start;
+          column-gap: 24px; row-gap: 20px; box-sizing: border-box; width: 100%; max-width: 1256px; margin: 0 auto; padding: 28px; }
+        #page > * { min-width: 0; }
+        #page > :first-child, #page > [dir="auto"], #page > [role="button"], #page > #more-menu { grid-column: 1 / -1; }
+        #page[data-view="signup"], #page[data-view="setup"], #page[data-view="matches"], #page[data-view="paused"] { grid-template-columns: minmax(0, 640px); justify-content: center; }
+        #page[data-view="more"] { grid-template-columns: minmax(0, 760px); justify-content: center; }
+        #page[data-view="welcome"] { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+        #page[data-view="welcome"] > * { grid-column: 1; }
+        #page[data-view="welcome"] > :last-child { grid-column: 2; grid-row: 1 / span 3; }
+        #page[data-view="find"] > #find-main { grid-column: 1; }
+        #page[data-view="find"] > #filters { grid-column: 2; }
+        #page > #support-cols { grid-column: 1 / -1; }
+      }
+    </style>
+  <meta name="theme-color" content="#0A2A5E">
+<link rel="icon" href="/app/favicon.ico"/></head>
+  <body>
+    <noscript>Undrcurrent needs JavaScript turned on.</noscript>
+    <div id="root"></div>
+  <script src="/app/_expo/static/js/web/index-6806ed07cd79ab736167d0afaed871a1.js" defer></script>
+</body>
+</html>
